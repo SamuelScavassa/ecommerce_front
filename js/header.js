@@ -1,7 +1,17 @@
+
+
+
 function navLogin() {
-    window.location.href = "http://localhost:5500/views/login.html";
+    recuperarUser()
+    if(user == null){
+        window.location.href = "login.html";
+    }
+    else {
+        window.location.href = "user.html"
+    }
 }
 
 function navIndex() {
-    window.location.href = "http://localhost:5500/views/index.html";
+    window.location.href = "index.html";
 }
+

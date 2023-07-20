@@ -1,11 +1,10 @@
-import {getCookieObject} from login.js;
+let user
 
 function getProdutos() {
-    recuperarUser();
+
     let url = "http://127.0.0.1:3000/produtos"
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, false);
-
     xhttp.send();
 
     if (xhttp.status == 200) {
@@ -14,6 +13,10 @@ function getProdutos() {
     }
     else {
         document.body.innerHTML = '<h1> Sem produtos ainda </h1>'
+    }
+    recuperarUser();
+    if (user.nome != null) {
+      document.getElementById("login").textContent = 'Olá, '+ user.nome
     }
 }
 
@@ -67,22 +70,21 @@ const table = document.createElement('table');
 
 }
 
-
 function verProduto(id) {
     this.idP = id;
-    window.location.href = "http://127.0.0.1:5500/views/produto.html?id=${id}"
+    window.location.href = "produto.html?id="+id
 }
 
 function recuperarUser() {
-  var user = getCookieObject("user");
-  if(user != null) {
-    document.getElementById("login").value = user.nome
+  const cookies = document.cookie.split(";");
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i]
+    console.log(cookie)
+    if (cookie.startsWith('user=')) {
+      user =  JSON.parse(cookie.substring(5));
+      console.log(user)
+    }
   }
 }
-
-
-
-
-
 
 

@@ -8,15 +8,18 @@
 </head>
 <body onload="iniciarProduto()">
     <header>
-        <img src="/images/kabum-logo.png">
+        <img src="/images/kabum-logo.png" onclick="navIndex()">
         <input>
     <div>
-        <button id="home" onclick="navIndex()">Home</button>
+        <button id="home" onclick="navIndex()">🛒</button>
         <button id="produtos" onclick="">Produtos</button>
         <button id="login" onclick="navLogin()">Login</button>
     </div>
 </header>
-    <h1 id="nomeProduto">Teste</h1>
+    <h1 id="nomeProduto"></h1>
+    <h2 id="descricao"></h2>
+    <h2 id="preco"></h2>
+    <button>Comprar</button>
     <script src="/js/prduto.js"></script>
     <script src="/js/header.js"></script>
 </body>

@@ -9,10 +9,10 @@
 </head>
 <body>
     <header>
-        <img src="/images/kabum-logo.png">
+        <img src="/images/kabum-logo.png" onclick="navIndex()">
         <input>
         <div>
-            <button id="home" onclick="navIndex()">Home</button>
+            <button id="home" onclick="">🛒</button>
             <button id="produtos" onclick="">Produtos</button>
             <button id="login" onclick="navLogin()">Login</button>
         </div>
@@ -24,11 +24,12 @@
         <input placeholder="Insira seu email" type="email" onkeyup="getEmail()" id="email"></input>
         <input placeholder="Insira sua senha" type="password" onkeyup="getSenha()" id="senha"></input>
         <input type="button" value="Login" onclick="login()">
-        <a href="">>Ainda não tem conta, crie uma aqui!<</a>
+        <a href="">Ainda não tem conta, crie uma aqui!</a>
     </fomr>
     </div>
 
 <script src="/js/header.js"></script>
 <script src="/js/login.js"></script>
+
 </body>
 </html>
