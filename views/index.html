@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kabum Clone</title>
+    <link rel="stylesheet" href="/style/style.css">
 </head>
 <body onload="getProdutos()">
     <header>
-        <input>
-        <button id="home">Home</button>
-        <button id="produtos">Produtos</button>
-        <button id="login">Login</button>
+            <img src="/images/kabum-logo.png">
+            <input>
+        <div>
+            <button id="home" onclick="navIndex()">Home</button>
+            <button id="produtos" onclick="">Produtos</button>
+            <button id="login" onclick="navLogin()">Login</button>
+        </div>
     </header>
     <div id="lista_produtos"></div>
+    <script src="/js/header.js"></script>
     <script src="/js/index.js"></script>
 </body>
 </html>

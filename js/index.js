@@ -1,4 +1,7 @@
+import {getCookieObject} from login.js;
+
 function getProdutos() {
+    recuperarUser();
     let url = "http://127.0.0.1:3000/produtos"
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, false);
@@ -64,26 +67,22 @@ const table = document.createElement('table');
 
 }
 
-let idP;
 
 function verProduto(id) {
     this.idP = id;
-    window.location.href = "http://127.0.0.1:5500/views/produto.html"
+    window.location.href = "http://127.0.0.1:5500/views/produto.html?id=${id}"
+}
+
+function recuperarUser() {
+  var user = getCookieObject("user");
+  if(user != null) {
+    document.getElementById("login").value = user.nome
+  }
 }
 
 
 
-function iniciarProduto() {
-
-    console.log(idP)
-    let get_url = 'http://127.0.0.1:3000/produtos/' + idP
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", get_url, false);
-    xhttp.send();
-    let produto_atual = JSON.parse(xhttp.responseText);
 
 
-    document.getElementById("nomeProduto").textContent = produto_atual.nome;
-}
+
 
