@@ -1,0 +1,6 @@
+<app-cabecalho />
+<body>
+    <div *ngFor="let item of Lista">
+        <app-produto nome="{{item['nome']}}" preco="{{(item['preco'])}}" />
+    </div>
+</body>
