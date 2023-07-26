@@ -11,6 +11,8 @@ import { LoginService } from './services/login.service';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ProdutoComponent } from './conponents/produto/produto.component';
+import { ResultadoPesquisaComponent } from './views/resultado-pesquisa/resultado-pesquisa.component';
+import { CarrinhoPageComponent } from './views/carrinho-page/carrinho-page.component';
 
 
 @NgModule({
@@ -20,12 +22,15 @@ import { ProdutoComponent } from './conponents/produto/produto.component';
     CabecalhoComponent,
     FormLoginComponent,
     LoginComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    ResultadoPesquisaComponent,
+    CarrinhoPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [LoginService, CookieService],
   bootstrap: [AppComponent]

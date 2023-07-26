@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class HomeComponent {
   user: any;
   Lista: any;
-  constructor(private servico: LoginService){
+  constructor(private servico: LoginService, private carrinho: CarrinhoService){
   }
   ngOnInit(){
     this.user = this.servico.recuperarUser();
@@ -50,9 +51,13 @@ export class HomeComponent {
     for (let i = 0; i < 10; i++) {
       const indiceAleatorio = Math.floor(Math.random() * copiaLista.length);
       const elementoAleatorio = copiaLista.splice(indiceAleatorio, 1)[0];
-      elementosAleatorios.push(elementoAleatorio); 
+      elementosAleatorios.push(elementoAleatorio);
     }
 
     return elementosAleatorios;
+  }
+
+  add(produto: any){
+    this.carrinho.addAoCarrinho(produto);
   }
 }

@@ -1,8 +1,8 @@
 <header>
 <div id="pesq">
     <img src="/assets/img/logo.webp" class="logo" (click)="navIndex()">
-    <input id="barra" >
-    <button id="botaoPesq">🔍</button>
+    <input id="barra" [(ngModel)]="busca">
+    <button id="botaoPesq" (click)="pesquisa()">🔍</button>
 </div>
 
 
@@ -10,7 +10,7 @@
 
 
 <div class="botoes">
-    <button id="nav" onclick="">Carrinho</button>
+    <button id="nav" (click)="navCarrinho()">Carrinho {{numCarrinho}}</button>
     <button id="nav" onclick="">Produtos</button>
     <button id="nav" (click)="navLogin()">{{ botao }}</button>
 </div>
