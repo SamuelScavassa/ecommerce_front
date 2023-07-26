@@ -1,9 +1,17 @@
 <app-cabecalho />
 
 <div id="produtos">
-    <div *ngFor="let item of Carrinho" >
-        <app-produto nome="{{item['nome']}}" preco="{{(item['preco'])}}" (click)="null" />
-        <button id="now">Comprar agora</button>
-        <button id="late" (click)="null">🛒</button>
+    <div *ngFor="let item of Carrinho;" class="produto-container">
+        <app-produto [nome]="item.nome" [preco]="item.preco" (click)="null"></app-produto>
+        <div class="produto-actions">
+          <button (click)="deletar(item)">🗑️</button>
+        </div>
     </div>
 </div>
+
+<div id="divv">
+    <h1>Finalizar compra</h1>
+    <h2>Total R$ {{total}}</h2>
+    <button>Pagar</button>
+</div>
+

@@ -9,11 +9,29 @@ import { CarrinhoService } from 'src/app/services/carrinho.service';
 })
 export class CarrinhoPageComponent {
   Carrinho = new Array
+  total: number = 0;
   constructor(private carrinho: CarrinhoService) {}
+
   ngOnInit()
   {
-    this.Carrinho = this.carrinho.getCarrinho();
+    try {
+      this.Carrinho = this.carrinho.getCarrinho();
+      this.getValor()
+    }
+    catch (e) {
+
+    }
   }
 
-  
+  async deletar(item: any){
+    await this.carrinho.removeItem(item);
+    window.location.href = "/carrinho";
+  }
+
+  getValor() {
+     setInterval(() => {
+      this.total = this.carrinho.total();
+     }, 100)
+  }
+
 }

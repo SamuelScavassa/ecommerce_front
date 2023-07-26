@@ -1,0 +1,79 @@
+/* Estilização para o componente do e-commerce */
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#divv {
+  padding: 20px;
+  border: 1px solid #ccc;
+  max-width: 400px;
+  margin: 25px auto;
+  color: white;
+}
+
+#produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    gap: 20px;
+  }
+
+  .produto-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .produto-nome {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .produto-preco {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .produto-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .produto-actions button {
+    background-color: #ff3d00;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .produto-actions button:hover {
+    background-color: #e64a19;
+  }
+
+
