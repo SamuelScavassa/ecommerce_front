@@ -8,12 +8,17 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class HomeComponent {
   user: any;
-  Lista = []
+  Lista: any;
   constructor(private servico: LoginService){
   }
   ngOnInit(){
     this.user = this.servico.recuperarUser();
-    this.Lista = this.getProdutos();
+    try {
+      this.Lista = this.get10ElementosAleatorios(this.getProdutos());
+    }
+    catch (e) {
+
+    }
   }
   getProdutos() {
     let url = "http://127.0.0.1:3000/produtos"
@@ -32,5 +37,22 @@ export class HomeComponent {
   Number(va: string)
   {
     return parseFloat(va);
+  }
+
+  get10ElementosAleatorios(lista: any[]) {
+    if (lista.length <= 20) {
+      return lista;
+    }
+
+    const elementosAleatorios = [];
+    const copiaLista = lista.slice();
+
+    for (let i = 0; i < 10; i++) {
+      const indiceAleatorio = Math.floor(Math.random() * copiaLista.length);
+      const elementoAleatorio = copiaLista.splice(indiceAleatorio, 1)[0];
+      elementosAleatorios.push(elementoAleatorio); 
+    }
+
+    return elementosAleatorios;
   }
 }

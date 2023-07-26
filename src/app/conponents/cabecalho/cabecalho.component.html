@@ -1,9 +1,17 @@
 <header>
-    <img src="" (click)="navIndex()">
-    <input>
-<div>
-    <button id="home" onclick="">🛒</button>
-    <button id="produtos" onclick="">Produtos</button>
-    <button id="login" (click)="navLogin()">{{ textoDoBotao }}</button>
+<div id="pesq">
+    <img src="/assets/img/logo.webp" class="logo" (click)="navIndex()">
+    <input id="barra" >
+    <button id="botaoPesq">🔍</button>
+</div>
+
+
+<h1>{{ nome }}</h1>
+
+
+<div class="botoes">
+    <button id="nav" onclick="">Carrinho</button>
+    <button id="nav" onclick="">Produtos</button>
+    <button id="nav" (click)="navLogin()">{{ botao }}</button>
 </div>
 </header>

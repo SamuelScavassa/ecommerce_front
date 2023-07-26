@@ -1,0 +1,60 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+#barra {
+    background-color: black;
+    box-shadow: none;
+    border: none;
+    border-bottom: solid 1px white;
+    margin: 8px;
+    color: white;
+
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 1.5em;
+
+}
+
+#botaoPesq {
+    background-color: black;
+    box-shadow: none;
+    border: none;
+}
+
+#nav {
+    height: 30px;
+    width: 80px;
+    color: white;
+    background-color: black;
+    flex-direction: row;
+    margin: 5px;
+    border: none;
+    border-bottom: 1px solid white;
+    box-shadow: none;
+
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#pesq {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    padding: 10px;
+}

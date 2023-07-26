@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError } from 'rxjs';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -7,14 +8,31 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './cabecalho.component.html',
   styleUrls: ['./cabecalho.component.css']
 })
+
 export class CabecalhoComponent {
-  textoDoBotao: string = 'Login';
+  nome: string = '';
+  botao: string = 'Login'
   constructor(private servico: LoginService){
 
   }
-  
+  ngOnInit(){
+    try {
+      var nome = this.servico.recuperarUser();
+      this.nome = 'Bem vindo, ' + nome['nome']
+      this.botao = 'Usuário'
+    }
+    catch (e) {
+
+    }
+  }
+
   navLogin() {
-    window.location.href = ("/login");
+    if(this.botao == 'Login'){
+      window.location.href = ("/login");
+    } else {
+      
+    }
+
   }
   navIndex() {
     window.location.href = " ";

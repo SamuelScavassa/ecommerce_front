@@ -8,6 +8,5 @@ import { Component, Input } from '@angular/core';
 
 export class ProdutoComponent {
   @Input() nome: string = '';
-  @Input() descricao: string = '';
   @Input() preco: string = '0';
 }

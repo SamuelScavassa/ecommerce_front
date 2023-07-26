@@ -1,6 +1,11 @@
 <app-cabecalho />
-<body>
-    <div *ngFor="let item of Lista">
-        <app-produto nome="{{item['nome']}}" preco="{{(item['preco'])}}" />
+
+<div id="produtos">
+    <div *ngFor="let item of Lista" >
+        <app-produto nome="{{item['nome']}}" preco="{{(item['preco'])}}" (click)="null" />
+        <button id="now">Comprar agora</button>
+        <button id="late">🛒</button>
     </div>
-</body>
+</div>
+
+
