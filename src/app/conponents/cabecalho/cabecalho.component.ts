@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 
@@ -16,7 +17,9 @@ export class CabecalhoComponent {
   nome: string = '';
   botao: string = 'Login'
   numCarrinho: string = ''
-  constructor(private servico: LoginService, private buscar: PesquisaService, private carrinho: CarrinhoService, private cookieService: CookieService){
+  constructor(private servico: LoginService, private buscar: PesquisaService,
+    private carrinho: CarrinhoService, private cookieService: CookieService,
+    private router: Router){
 
   }
   load(){
@@ -41,18 +44,22 @@ export class CabecalhoComponent {
 
   navLogin() {
     if(this.botao == 'Login'){
-      window.location.href = ("/login");
+      this.router.navigateByUrl("/login");
     } else {
-
+      this.router.navigateByUrl('/usuario')
     }
 
   }
 
   navCarrinho(){
-    window.location.href = "/carrinho";
+    this.router.navigateByUrl("/carrinho");
   }
   navIndex() {
-    window.location.href = " ";
+    this.router.navigateByUrl("/");
+  }
+
+  navProduto(){
+    this.router.navigateByUrl('/produtos');
   }
 
   async pesquisa(){

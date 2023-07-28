@@ -13,6 +13,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { ProdutoComponent } from './conponents/produto/produto.component';
 import { ResultadoPesquisaComponent } from './views/resultado-pesquisa/resultado-pesquisa.component';
 import { CarrinhoPageComponent } from './views/carrinho-page/carrinho-page.component';
+import { UsuarioComponent } from './views/usuario/usuario.component';
+import { ProdutosComponent } from './views/produtos/produtos.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { CarrinhoPageComponent } from './views/carrinho-page/carrinho-page.compo
     LoginComponent,
     ProdutoComponent,
     ResultadoPesquisaComponent,
-    CarrinhoPageComponent
+    CarrinhoPageComponent,
+    UsuarioComponent,
+    ProdutosComponent
   ],
   imports: [
     BrowserModule,

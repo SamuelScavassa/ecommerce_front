@@ -1,0 +1,26 @@
+<app-cabecalho />
+
+<div>
+    <table>
+        <thead>
+          <tr>
+            <th>Nome do Produto</th>
+            <th>Preço</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of Lista">
+            <td>{{ item.nome }}</td>
+            <td>{{ item.preco | currency }}</td>
+            <td>
+              <div>
+                <button id="now" (click)="null">Comprar agora</button>
+                <button id="late" (click)="add(item)">Adcionar ao carrinho</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

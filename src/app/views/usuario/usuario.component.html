@@ -1,0 +1,23 @@
+<app-cabecalho />
+
+<div class="corpo">
+  <div class="container">
+    <h1>Perfil do Usuário</h1>
+    <div class="user-info">
+      <div class="info">
+        <label for="name">Nome: {{ usuario.nome }}</label>
+
+      </div>
+      <div class="info">
+        <label for="email">Email: {{ usuario.email }} </label>
+
+      </div>
+    </div>
+    <div class="actions">
+      <button id="update-btn">Atualizar Dados</button>
+      <button>Visualizar Pedidos</button>
+      <button id="logout-btn" (click)="sair()">Logout</button>
+    </div>
+  </div>
+</div>
+

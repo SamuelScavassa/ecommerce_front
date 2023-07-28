@@ -45,11 +45,13 @@ button:hover {
     padding: 20px;
     max-width: 300px;
     text-align: center;
+    background-color:darkgray;
   }
 
   .produto-nome {
     font-size: 18px;
     font-weight: bold;
+    color: black;
   }
 
   .produto-preco {

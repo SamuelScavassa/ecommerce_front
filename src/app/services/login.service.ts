@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Convert } from '../models/user';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private cookieService: CookieService) {
+  constructor(private cookieService: CookieService, private router: Router) {
   }
   login(email :string, senha: string) {
 
@@ -27,8 +28,12 @@ export class LoginService {
       fetch(url, requestOptions)
         .then(response => response.json())
         .then(data => {
-          this.setCookieObject("user", JSON.stringify(data), 30);
-          window.location.href = " ";
+          if(data != null){
+            this.setCookieObject("user", JSON.stringify(data), 30);
+            this.router.navigateByUrl('/');
+          } else {
+            alert("Erro no login");
+          }
         })
         .catch(error => {
           console.error("Erro ao enviar a solicitação:", error);
@@ -47,5 +52,9 @@ export class LoginService {
     } else {
       console.log('JSON não encontrado no cookie.');
     }
+  }
+
+  logout(){
+    this.cookieService.delete('user');
   }
 }
