@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 
@@ -10,7 +11,7 @@ import { CarrinhoService } from 'src/app/services/carrinho.service';
 export class CarrinhoPageComponent {
   Carrinho = new Array
   total: number = 0;
-  constructor(private carrinho: CarrinhoService) {}
+  constructor(private carrinho: CarrinhoService, private router: Router) {}
 
   ngOnInit()
   {
@@ -32,6 +33,10 @@ export class CarrinhoPageComponent {
      setInterval(() => {
       this.total = this.carrinho.total();
      }, 100)
+  }
+
+  ver(id: any){
+    this.router.navigateByUrl('/produto/'+id)
   }
 
 }

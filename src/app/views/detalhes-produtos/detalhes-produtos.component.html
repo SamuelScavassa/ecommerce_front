@@ -1,0 +1,10 @@
+<app-cabecalho></app-cabecalho>
+<div class="product-details">
+    <h1>{{ produto.nome }}</h1>
+    <h2>{{ produto.descricao }}</h2>
+    <h2 class="price">Preço: R$ {{ produto.preco }}</h2>
+    <div class="buttons">
+        <button class="buy-button">Comprar</button>
+        <button class="add-to-cart-button" (click)="add(produto)">Adicionar ao Carrinho</button>
+    </div>
+</div>

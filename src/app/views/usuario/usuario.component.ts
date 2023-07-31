@@ -22,4 +22,8 @@ export class UsuarioComponent {
     await this.login.logout();
     this.router.navigateByUrl('/')
   }
+
+  alterar() {
+    this.router.navigateByUrl('/alterar')
+  }
 }

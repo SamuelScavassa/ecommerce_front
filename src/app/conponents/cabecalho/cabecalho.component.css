@@ -1,8 +1,11 @@
+/* Default styles for the header */
 header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: black;
 }
+
 #barra {
     background-color: black;
     box-shadow: none;
@@ -10,7 +13,6 @@ header {
     border-bottom: solid 1px white;
     margin: 8px;
     color: white;
-
 }
 
 h1 {
@@ -19,7 +21,6 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-size: 1.5em;
-
 }
 
 #botaoPesq {
@@ -38,7 +39,6 @@ h1 {
     border: none;
     border-bottom: 1px solid white;
     box-shadow: none;
-
 }
 
 .botoes {
@@ -46,15 +46,37 @@ h1 {
     flex-direction: row;
     align-items: center;
 }
+
 #pesq {
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
+
 img {
     width: 70px;
     height: 70px;
     border-radius: 100%;
     padding: 10px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 1.2em;
+        margin-top: 10px;
+        display: none;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    
 }

@@ -26,7 +26,7 @@ button:hover {
 
 #divv {
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid white;
   max-width: 400px;
   margin: 25px auto;
   color: white;
@@ -38,6 +38,7 @@ button:hover {
     justify-content: center;
     margin: 10px;
     gap: 20px;
+    
   }
 
   .produto-container {
@@ -45,7 +46,8 @@ button:hover {
     padding: 20px;
     max-width: 300px;
     text-align: center;
-    background-color:darkgray;
+    background-color:white;
+    color: black;
   }
 
   .produto-nome {

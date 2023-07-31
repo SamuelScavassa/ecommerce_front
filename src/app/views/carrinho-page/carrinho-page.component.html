@@ -2,7 +2,7 @@
 
 <div id="produtos">
     <div *ngFor="let item of Carrinho;" class="produto-container">
-        <app-produto [nome]="item.nome" [preco]="item.preco" (click)="null"></app-produto>
+        <app-produto [nome]="item.nome" [preco]="item.preco" (click)="ver(item.id)"></app-produto>
         <div class="produto-actions">
           <button (click)="deletar(item)">🗑️</button>
         </div>

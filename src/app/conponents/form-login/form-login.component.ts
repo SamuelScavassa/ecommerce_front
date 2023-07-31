@@ -17,7 +17,7 @@ export class FormLoginComponent {
 
   logar() {
     this.servico.login(this.email, this.senha);
-    
+
   }
 
 }

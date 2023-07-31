@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -9,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class ProdutosComponent {
   Lista: any;
-  constructor(private servico: LoginService, private carrinho: CarrinhoService){
+  constructor(private servico: LoginService, private carrinho: CarrinhoService, private router: Router){
   }
   ngOnInit(){
 
@@ -39,6 +40,9 @@ export class ProdutosComponent {
   }
   add(produto: any){
     this.carrinho.addAoCarrinho(produto);
+  }
+  ver(id: any){
+    this.router.navigateByUrl('/produto/'+id);
   }
 }
 

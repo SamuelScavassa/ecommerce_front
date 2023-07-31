@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class LoginService {
-
+  user: any;
   constructor(private cookieService: CookieService, private router: Router) {
   }
   login(email :string, senha: string) {
@@ -29,7 +29,8 @@ export class LoginService {
         .then(response => response.json())
         .then(data => {
           if(data != null){
-            this.setCookieObject("user", JSON.stringify(data), 30);
+            this.user = Convert.toUser(JSON.stringify(data));
+            this.setCookieObject("user", Convert.userToJson(this.user), 30);
             this.router.navigateByUrl('/');
           } else {
             alert("Erro no login");

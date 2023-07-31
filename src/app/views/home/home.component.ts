@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -10,7 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class HomeComponent {
   user: any;
   Lista: any;
-  constructor(private servico: LoginService, private carrinho: CarrinhoService){
+  constructor(private servico: LoginService, private carrinho: CarrinhoService, private router: Router){
   }
   ngOnInit(){
     this.user = this.servico.recuperarUser();
@@ -18,7 +19,6 @@ export class HomeComponent {
       this.Lista = this.get10ElementosAleatorios(this.getProdutos());
     }
     catch (e) {
-
     }
   }
   getProdutos() {
@@ -40,15 +40,18 @@ export class HomeComponent {
     return parseFloat(va);
   }
 
-  get10ElementosAleatorios(lista: any[]) {
-    if (lista.length <= 20) {
+  ver(id: any){
+    this.router.navigateByUrl('/produto/'+id);
+  }
+
+  get10ElementosAleatorios(lista: any) {
+    if (lista.length < 15) {
       return lista;
     }
-
     const elementosAleatorios = [];
     const copiaLista = lista.slice();
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 12; i++) {
       const indiceAleatorio = Math.floor(Math.random() * copiaLista.length);
       const elementoAleatorio = copiaLista.splice(indiceAleatorio, 1)[0];
       elementosAleatorios.push(elementoAleatorio);
